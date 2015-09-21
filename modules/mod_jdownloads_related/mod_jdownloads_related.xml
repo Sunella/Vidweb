@@ -2,12 +2,12 @@
 <extension type="module" client="site" version="3.1" method="upgrade">
         <name>jDownloads Related</name>
         <author>Arno Betz</author>
-        <creationDate>2015-08-26</creationDate>
+        <creationDate>2015-09-17</creationDate>
         <copyright>(C) 2009-2015 by Arno Betz. All rights reserved.</copyright>
         <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
         <authorEmail>info@jDownloads.com</authorEmail>
         <authorUrl>www.jDownloads.com</authorUrl>
-        <version>3.2.36</version>
+        <version>3.2.38</version>
         <description>MOD_JDOWNLOADS_RELATED_XML_DESCRIPTION</description>
         <files>
                 <filename module="mod_jdownloads_related">mod_jdownloads_related.php</filename>
@@ -121,7 +121,8 @@
                     <option value="a.file_id">MOD_JDOWNLOADS_RELATED_ORDER_ID</option>
                     <option value="a.file_alias">MOD_JDOWNLOADS_RELATED_ORDER_ALIAS</option>
                     <option value="a.date_added">MOD_JDOWNLOADS_RELATED_ORDER_CREATED_DATE</option>
-                    <option value="modified_date">MOD_JDOWNLOADS_RELATED_ORDER_MODIFIED_DATE</option>
+                    <option value="a.modified_date">MOD_JDOWNLOADS_RELATED_ORDER_MODIFIED_DATE</option>
+                    <option value="rand()">MOD_JDOWNLOADS_RELATED_ORDER_RANDOM</option>
                 </field>
                 <field name="download_ordering_direction" type="list" default="ASC" label="MOD_JDOWNLOADS_RELATED_DIRECTION" description="MOD_JDOWNLOADS_RELATED_DIRECTION_DESC">
                     <option value="DESC">MOD_JDOWNLOADS_RELATED_DESCENDING</option>

@@ -17,8 +17,7 @@ require_once __DIR__ . '/helper.php';
 	$db      = JFactory::getDBO(); 
 	$user    = JFactory::getUser(); 
 	$Itemid  = JRequest::getVar("Itemid");
-        
-    JHTML::_('behavior.tooltip');
+    
     JHTML::stylesheet( 'mod_jdownloads_most_recently_downloaded.css','modules/'.$module->module.'/'); 
     
     // get published root menu link

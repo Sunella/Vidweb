@@ -14,6 +14,8 @@
 // this is a default layout and used tables - you can also create a alternate layout and select it afterwards in the module configuration
 
 defined('_JEXEC') or die;
+
+    JHTML::_('bootstrap.tooltip');
     
     $html = '';
     $html = '<table style="width:100%;" class="moduletable'.$moduleclass_sfx.'">';

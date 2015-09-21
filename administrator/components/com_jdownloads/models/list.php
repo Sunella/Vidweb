@@ -13,10 +13,10 @@
 
 defined('_JEXEC') or die();
 
-jimport('joomla.application.component.modellist');
+jimport('joomla.application.component.modellist'); 
 jimport('joomla.application.component.modeladmin'); 
 
-class jdownloadsModeldownloads extends JModelList
+class jdownloadsModelList extends JModelList
 {
      /**
      * Constructor.
@@ -358,34 +358,34 @@ class jdownloadsModeldownloads extends JModelList
         return $query;
     }
     
-    /* Method to checkin a layout
+    /**
+     * Method to get a list of articles.
+     * Overridden to add a check for access levels.
      *
-     * @access    public
-     * @return    boolean    True on success
+     * @return  mixed  An array of data items on success, false on failure.
+     *
      */
-    public function checkin($id)
+    public function getItems()
     {
-        $app       = JFactory::getApplication();
-    /*    $db        = $this->getDbo();
-        $query     = $db->getQuery(true);
-        $nullDate  = $db->getNullDate();
-        $id = join(",", $id);
-           
-        $query = $db->getQuery(true)
-                ->update($db->quoteName('#__jdownloads_files'))
-                ->set('checked_out = 0')
-                ->set('checked_out_time = '.$db->Quote($nullDate))
-                ->where('file_id IN ('.$id.')');
+        $items = parent::getItems();
 
-        $db->setQuery($query);
-        if ($db->execute())
+        if (JFactory::getApplication()->isSite())
         {
-            return true;
-        } else {
-            return false;
-        } */
-    }
-    
+            $user = JFactory::getUser();
+            $groups = $user->getAuthorisedViewLevels();
+
+            for ($x = 0, $count = count($items); $x < $count; $x++)
+            {
+                // Check the access level. Remove articles the user shouldn't see
+                if (!in_array($items[$x]->access, $groups))
+                {
+                    unset($items[$x]);
+                }
+            }
+        }
+
+        return $items;
+    }    
     
     
 }

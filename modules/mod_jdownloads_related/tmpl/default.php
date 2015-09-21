@@ -12,6 +12,8 @@
 
 defined('_JEXEC') or die;
 
+    JHTML::_('bootstrap.tooltip');
+
     if (count($files) > 1 ){
 		
         $html = '<table style="width:100%;" class="moduletable'.$moduleclass_sfx.'">';

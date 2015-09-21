@@ -12,14 +12,15 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-require_once __DIR__ . '/helper.php';
-
+    require_once __DIR__ . '/helper.php';
+    
     $db = JFactory::getDBO();
-    JHtml::_('behavior.tooltip');
+    
     $Itemid = JRequest::getVar("Itemid");
-    $cat_id  = (int)JRequest::getVar("catid");
-    $id     = (int)JRequest::getVar("id");
     $option = JRequest::getVar("option");        
+    
+    $cat_id = (int)JRequest::getVar("catid");
+    $id     = (int)JRequest::getVar("id");
     
     if ($option != 'com_jdownloads'){
         return;
